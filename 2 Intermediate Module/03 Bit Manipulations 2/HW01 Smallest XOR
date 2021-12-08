@@ -1,0 +1,86 @@
+public class Solution {
+    public int solve(int A, int B) {
+        int X = 0;
+        for(int i = 30; i >= 0; --i) {
+            if(B == 0) {
+                return X;
+            }
+            if(((1 << i) & A) > 0) {
+                X |= (1 << i);
+                --B;
+            }
+        }
+        for(int i = 0; i <= 30; ++i) {
+            if(B == 0) {
+                return X;
+            }
+            if(((1 << i) & X) == 0) {
+                X |= (1 << i);
+                --B;
+            }
+        }
+        return X;
+    }
+}
+
+
+#######################################################################
+Previous submission (Working yet clumsy) :-
+
+public class Solution {
+    static final int COUNT = 0; //array index 0
+    static final int MSB   = 1; //array index 1
+    
+    public int solve(int A, int B) {
+        int X = 0;
+        int SetBitsMsbA[] = findNumSetBits(A);
+        if(SetBitsMsbA[COUNT] == B) {
+            return A;
+        }
+        else if(SetBitsMsbA[COUNT] < B) {
+            if((SetBitsMsbA[MSB] + 1) < B) {
+                return ((int)Math.pow(2, B) - 1);
+            }
+            else {
+                int diff = B - SetBitsMsbA[COUNT];
+                for(int pos = 0; pos <= SetBitsMsbA[MSB]; ++pos) {
+                    if(ifBitSet(A, pos)) {
+                        X += (int)Math.pow(2, pos);
+                    }
+                    else {
+                        if(diff > 0) {
+                            X += (int)Math.pow(2, pos);
+                            --diff;
+                        }
+                    }
+                }
+                return X;
+            }
+        }
+        else {  //SetBitsMsbA[COUNT] > B
+            for(int pos = SetBitsMsbA[MSB]; pos >= 0; --pos) {
+                if((ifBitSet(A, pos)) && (B > 0)) {
+                    X += (int)Math.pow(2, pos);
+                    B--;
+                }
+            }
+            return X;
+        }
+    }
+    
+    static int[] findNumSetBits(int n) {
+        int setBitMsb[]  = new int[2];
+        setBitMsb[COUNT] = 0;   //Count of Set Bits in n
+        setBitMsb[MSB]   = -1;  //Position of MSB in n
+        for(; n > 0; setBitMsb[MSB]++, n = n >> 1) {
+            if((n & 1) == 1) {
+                setBitMsb[COUNT]++;
+            }
+        }
+        return setBitMsb;
+    }
+
+    static boolean ifBitSet(int num, int pos) {
+        return (((num >> pos) & 1) == 1);
+    }
+}
