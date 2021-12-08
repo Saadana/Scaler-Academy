@@ -1,0 +1,29 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in);
+        long balance = sc.nextLong();
+        int M = sc.nextInt();
+        long amount = 0;
+        int operation = 0;
+        for(int i = 0; i < M; i++) {
+            operation = sc.nextInt();
+            amount = sc.nextLong();
+            if(operation == 1) {
+                balance += amount;
+                System.out.println(balance);
+            }
+            else if(operation == 2) {
+                if(balance < amount) {
+                    System.out.println("Insufficient Funds");
+                }
+                else {
+                    balance -= amount;
+                    System.out.println(balance);
+                }
+            }
+        }
+    }
+}
