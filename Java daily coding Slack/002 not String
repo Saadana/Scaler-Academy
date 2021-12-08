@@ -1,0 +1,3 @@
+public String notString(String s) {
+    return (s.substring(0, 4).toUpperCase().equals("NOT ") ? s : ("not " + s));
+}
