@@ -1,0 +1,14 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public ArrayList<Integer> solve(final List<Integer> A, final List<Integer> B) {
+        int Asize = A.size();
+        int Bsize = B.size();
+        ArrayList<Integer> C = new ArrayList(Asize+Bsize);
+        for(int a = 0; a < Asize; a++)
+            C.add(A.get(a));
+        for(int b = 0; b < Bsize; b++)
+            C.add(B.get(b));
+        Collections.sort(C);
+        return C;
+    }
+}
