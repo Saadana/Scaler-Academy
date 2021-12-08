@@ -13,6 +13,6 @@ CONTENTS :
 Contests                : Basic Coding Test(to move to Intermediate)    :  9 problems  Sept  2021
 Java daily coding Slack : Simple Java coding everyday in Slack channel  :               Dec  2021
 
-
+  
 Use the below link to get ₹ 10,000/- discount on the course fee
 https://www.scaler.com/academy?unlock_code=SAADF3D0
