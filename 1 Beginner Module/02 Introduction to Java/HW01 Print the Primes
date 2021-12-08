@@ -1,0 +1,21 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {        
+        //~~~SIEVE OF ERATOSTHENES~~~
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        Boolean primes[] = new Boolean[N+1];
+        Arrays.fill(primes, Boolean.TRUE);
+        for(int i = 2; i*i <= N; i++) {
+            if(primes[i] == true) {
+                for(int j = i * i; j <= N; j+=i)
+                    primes[j] = false;
+            }
+        }
+        for(int i = 2; i <= N; i++)
+            if(primes[i] == true)
+                System.out.println(i);
+    }
+}
