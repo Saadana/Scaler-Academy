@@ -1,0 +1,16 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        int N = A.size();
+        int sum = 0;
+        for(int i = 0; i < N; ++i)
+            sum += A.get(i);
+        if(sum % 2 == 1) {
+            int minOdd = Integer.MAX_VALUE;
+            for(int i = 0; i < N; ++i)
+                if((A.get(i) % 2 == 1) && (A.get(i) < minOdd)) 
+                    minOdd = A.get(i);
+            sum -= minOdd;
+        }
+        return sum;
+    }
+}
