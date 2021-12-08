@@ -1,0 +1,14 @@
+public class Solution {
+    public ArrayList<Integer> solve(ArrayList<ArrayList<Integer>> A) {
+        int rows = A.size();
+        int cols = A.get(0).size();
+        ArrayList<Integer> B = new ArrayList(rows);
+        for(int c = 0; c < cols; ++c) {
+            int sum = 0;
+            for(int r = 0; r < rows; ++r)
+                sum += A.get(r).get(c);
+            B.add(sum);
+        }
+        return B;
+    }
+}
