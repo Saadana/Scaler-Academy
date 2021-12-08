@@ -1,0 +1,19 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in);
+        int rating = sc.nextInt();
+        if(rating >= 2100)
+            System.out.print((rating % 2 == 1) ? "grand master" : "GRAND MASTER");
+        else if(rating >= 1900)
+            System.out.print((rating % 2 == 1) ? "candidate master" : "CANDIDATE MASTER");
+        else if(rating >= 1600)
+            System.out.print((rating % 2 == 1) ? "expert" : "EXPERT");
+        else if(rating >= 1400)
+            System.out.print((rating % 2 == 1) ? "pupil" : "PUPIL");
+        else if(rating < 1400)
+            System.out.print((rating % 2 == 1) ? "newbie" : "NEWBIE");
+    }
+}
