@@ -1,0 +1,25 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int N = 0, B = 0, i = 0;
+        for(int t = 0; t < T; t++) {
+            N = sc.nextInt();
+            int[] A = new int[N];
+            for(i = 0; i < N; i++)
+                A[i] = sc.nextInt();
+            B = sc.nextInt();
+            for(i = 0; i < N; i++) {
+                if(A[i] == B) {
+                    System.out.println(1);
+                    break;
+                }
+            }
+            if(i == N)
+                System.out.println(0);
+        }
+    }
+}
