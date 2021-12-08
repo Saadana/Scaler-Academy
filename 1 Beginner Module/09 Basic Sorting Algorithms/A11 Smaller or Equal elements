@@ -1,0 +1,16 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A, int B) {
+        int N = A.size();
+        int l = 0, m = 0, r = N-1, index = N;
+        while(l <= r) {
+            m = l + (r - l) / 2;
+            if(A.get(m) > B) {
+                index = m;
+                r = m - 1;
+            }
+            else
+                l = m + 1;
+        }
+        return index;
+    }
+}
