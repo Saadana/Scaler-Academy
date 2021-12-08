@@ -1,0 +1,26 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int N = 0;
+        for(int i = 1; i <= T; i++) {
+            N = sc.nextInt();
+            int secondHalf[] = new int[(int)Math.sqrt(N)];
+            int sH = 0;
+            System.out.print(1 + " ");
+            for(int j = 2; j*j <= N; j++) {
+                if(N % j == 0) {
+                    System.out.print(j + " ");
+                    if(N/j != j)
+                        secondHalf[sH++] = N/j;
+                }
+            }
+            for(int tmp = sH-1; tmp >= 0; tmp--)
+                System.out.print(secondHalf[tmp] + " ");
+            System.out.println(N + " ");
+        }
+    }
+}
