@@ -1,0 +1,18 @@
+public class Solution {
+    public long reverse(long a) {
+        int left = 31, right = 0;
+        long one = 1L;
+        for( ; left > right; left--, right++) {
+            //Check if left and right bits are different
+            if(checkIfBitSet(a, left) ^ checkIfBitSet(a, right)) {
+                //Swap : this XOR will toggle 1 and 0 in the pos left/right
+                a ^= (one << left);
+                a ^= (one << right);
+            }
+        }
+        return a;
+    }
+    static boolean checkIfBitSet(long num, int pos) {
+        return (((num >> pos) & 1) == 1);
+    }
+}
