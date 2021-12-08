@@ -1,0 +1,33 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while(T-- > 0) {
+            int N = sc.nextInt();
+            ArrayList<Integer> A = new ArrayList(N);
+            ArrayList<Integer> odd = new ArrayList(N);
+            ArrayList<Integer> even = new ArrayList(N);
+            for(int i = 0; i < N; i++) {
+                int a = sc.nextInt();
+                A.add(a);
+            }
+            for(int i = 0; i < N; i++) {
+                if((A.get(i) & 1) == 1)
+                    odd.add(A.get(i));
+                else
+                    even.add(A.get(i));
+            }
+            int oddLen = odd.size();
+            int evenLen = even.size();
+            for(int i = 0; i < oddLen; i++)
+                System.out.print(odd.get(i) + " ");
+            System.out.println();
+            for(int j = 0; j < evenLen; j++)
+                System.out.print(even.get(j) + " ");
+            System.out.println();
+        }
+    }
+}
