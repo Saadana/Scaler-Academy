@@ -1,0 +1,19 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int count = 0;
+        Scanner sn = new Scanner(System.in);
+        int A = sn.nextInt();
+        int N = sn.nextInt();
+        int B[] = new int[N];
+        for(int i = 0; i < N; i++)
+            B[i] = sn.nextInt();
+        for(int i : B) {
+            if((i % A) % 2 == 0)
+                count++;
+        }
+        System.out.print(count);
+    }
+}
