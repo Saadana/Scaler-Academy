@@ -1,0 +1,12 @@
+public class Solution {
+    public int solve(String A) {
+        boolean count[] = new boolean[123]; //97 to 122 for 'a' to 'z'
+        int size = A.length();
+        int cnt = 0;
+        for(int i = 0; i < size; i++)
+            count[A.charAt(i)] = !count[A.charAt(i)];
+        for(boolean b : count)
+            if(b == true)   cnt++;
+        return cnt > 1 ? 0 : 1;
+    }
+}
