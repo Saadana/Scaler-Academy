@@ -1,0 +1,11 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        int count = 0;
+        int min = Collections.min(A);
+        int max = Collections.max(A);
+        for(int i : A)
+            if(i > min && i < max)
+                count++;
+        return count;
+    }
+}
