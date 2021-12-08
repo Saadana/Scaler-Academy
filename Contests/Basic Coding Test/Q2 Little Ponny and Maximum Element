@@ -1,0 +1,13 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A, int B) {
+        int count = 0;
+        boolean ifPresent = false;
+        for(int i : A) {
+            if(i > B)
+                count++;
+            else if(i == B)
+                ifPresent = true;
+        }
+        return (ifPresent) ? count : -1;
+    }
+}
