@@ -1,0 +1,13 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        int maxx = Integer.MIN_VALUE;
+        int minn = Integer.MAX_VALUE;
+        for(int i : A) {
+            if(i % 2 == 0)
+                maxx = Math.max(maxx, i);
+            else
+                minn = Math.min(minn, i);
+        }
+        return maxx-minn;
+    }
+}
