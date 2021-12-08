@@ -1,0 +1,26 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int N = 0, i = 0, j = 0;
+        for(int t = 1; t <= T; t++) {
+            N = sc.nextInt();
+            int[] A = new int[N];
+            int[] freq = new int[1001];     //Problem constraint max size : 10^3 + 1
+            for(i = 0; i < N; i++) {
+                A[i] = sc.nextInt();
+            }
+            for(i = 0; i < N; i++) {
+                freq[A[i]]++;
+            }            
+            for(i = 0; i <= 1000; i++) {
+                if(freq[i] == 1)
+                    System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+}
