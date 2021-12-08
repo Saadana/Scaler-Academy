@@ -1,0 +1,25 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int tmp = 0, gcd = 1, lcm = 0;
+        if(a < b) {
+            tmp = a;
+            a = b;
+            b = tmp;
+        }
+        int n1 = a, n2 = b;
+        while(a % b != 0) {
+            tmp = b;
+            b = a % b;
+            a = tmp;
+        }
+        gcd = b;
+        lcm = n1 * n2 / gcd;
+        System.out.print(lcm);
+    }
+}
