@@ -1,0 +1,19 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int N = 0, rev = 0;
+        for(int i = 0; i < T; i++) {
+            N = sc.nextInt();
+            rev = 0;
+            while(N > 0) {
+                rev = (rev * 10) + (N % 10);
+                N /= 10;
+            }
+            System.out.println(rev);
+        }
+    }
+}
