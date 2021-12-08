@@ -1,0 +1,17 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String res = "YES";
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        for(int i = 2; i*i <= A; i++) {
+            if(A % i == 0) {
+                res = "NO";
+                break;
+            }
+        }
+        System.out.print(res);
+    }
+}
