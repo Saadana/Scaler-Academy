@@ -3,11 +3,11 @@ This repo contains the [Scaler Academy](https://www.scaler.com/) 2021-2022 _(cur
 
 Curriculum, Assignments, Home works, Lecture notes, Contests, Misc problems
 
-
+<pre>
 A[nn] [Filename]  - Assignment Problem
 
 HW[nn] [Filename] - Home work Problem
-
+</pre>
 
 ## CONTENTS :
 
