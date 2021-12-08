@@ -1,0 +1,4 @@
+public String halfString(String s) {
+    int end = s.length()/2 + ((s.length() % 2 == 0) ? 0 : 1);
+    return s.substring(0, end);
+}
