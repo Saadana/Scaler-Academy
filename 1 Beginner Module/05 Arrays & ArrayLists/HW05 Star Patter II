@@ -1,0 +1,21 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int n = N, spaces = 0;
+        while(n-- > 0)
+            System.out.print("*");
+        System.out.println();
+        for(int i = N-1; i > 1; i--) {
+            System.out.print("*");
+            spaces = i-2 > 0 ? i-2 : 0;
+            while(spaces-- > 0)
+                System.out.print(" ");
+            System.out.println("*");
+        }
+        System.out.print("*");
+    }
+}
