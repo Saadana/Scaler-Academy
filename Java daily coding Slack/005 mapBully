@@ -1,0 +1,7 @@
+public HashMap<String, String> mapBully(HashMap<String, String> map) {
+    if(map.containsKey("a") && map.get("a").length() > 0) {
+        map.put("b", map.get("a"));
+        map.replace("a", "");
+    }
+    return map;
+}
