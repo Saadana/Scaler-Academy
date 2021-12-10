@@ -1,0 +1,10 @@
+public int caughtSpeeding(int speed, boolean isBday) {
+    int range0 = isBday ? 65 : 60;
+    int range1 = isBday ? 85 : 80;
+    if(speed <= range0)
+        return 0;
+    if(speed <= range1)
+        return 1;
+    else
+        return 2;
+}
