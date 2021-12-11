@@ -1,0 +1,35 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int solve(final List<Integer> A) {
+        Set<Integer> s = new HashSet<>();
+        int n = A.size();
+        int count = 0;
+        for(int i = 0; i < n; ++i) {
+            if(s.contains(A.get(i))) {
+                count++;
+            }
+            else {
+                s.add(A.get(i));
+            }
+        }
+        return count;
+    }
+}
+
+
+#######################################################
+
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int solve(final List<Integer> A) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int n = A.size();
+        int count = 0;
+        for(int i = 0; i < n; ++i) {
+            if(map.putIfAbsent(A.get(i), 1) != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
