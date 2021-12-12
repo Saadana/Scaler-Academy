@@ -1,0 +1,11 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public ArrayList<Integer> solve(final List<Integer> A, int B) {
+        int n = A.size();
+        ArrayList<Integer> outArr = new ArrayList<>();
+        for(int i = 0; i < n; ++i) {
+            outArr.add(A.get(i) + B);
+        }
+        return outArr;
+    }
+}
