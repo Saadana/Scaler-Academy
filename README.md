@@ -1,7 +1,7 @@
 # Scaler-Academy
 This repo contains the [Scaler Academy](https://www.scaler.com/) 2021-2022 _(currently ongoing)_
 
-Curriculum, Assignments, Home works, Lecture notes, Contests, Misc problems
+Curriculum, (own solutions to) Assignments and Home works, Lecture notes, Contests, Misc problems
 
 <pre>
 A[nn] [Filename]  - Assignment Problem
