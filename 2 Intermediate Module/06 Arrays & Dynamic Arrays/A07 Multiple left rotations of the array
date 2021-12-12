@@ -1,0 +1,36 @@
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
+        int nA = A.size();
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>> ();
+        for(int b : B) {
+            ArrayList<Integer> r = new ArrayList<Integer> ();
+            for(int a = 0; a < nA; ++a) {
+                r.add(A.get((a + b) % nA));
+            }
+            res.add(r);
+        }
+        return res;
+    }
+}
+
+
+############################################################################
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
+        int Asize = A.size();
+        int Bsize = B.size();
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>> ();
+        for(int b = 0; b < Bsize; ++b) {
+            ArrayList<Integer> r = new ArrayList<> ();
+            int start = B.get(b) % Asize;
+            int i = start;
+            do {
+                r.add(A.get(i));
+                i = (i == Asize - 1) ? 0 : ++i;
+            } while(i != start);
+            res.add(r);
+        }
+        return res;
+    }
+}
