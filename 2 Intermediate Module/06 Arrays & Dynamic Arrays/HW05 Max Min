@@ -1,0 +1,5 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        return (Collections.max(A) + Collections.min(A));
+    }
+}
