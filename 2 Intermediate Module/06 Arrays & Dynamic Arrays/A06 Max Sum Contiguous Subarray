@@ -1,0 +1,15 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int maxSubArray(final List<Integer> A) {
+        //Kadane's algorithm
+        int n = A.size();
+        int maxSoFar = Integer.MIN_VALUE;
+        int maxEndingHere = 0;
+        for(int i = 0; i < n; ++i) {
+            maxEndingHere += A.get(i);
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+            maxEndingHere = Math.max(maxEndingHere, 0);
+        }
+        return maxSoFar;
+    }
+}
