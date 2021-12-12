@@ -1,0 +1,6 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A, int B) {
+        Collections.sort(A);
+        return (A.get(A.size()-B) - A.get(B-1));
+    }
+}
