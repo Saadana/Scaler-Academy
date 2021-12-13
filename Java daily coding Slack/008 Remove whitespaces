@@ -1,0 +1,21 @@
+str.replaceAll("\\s+", "")
+
+
+
+https://stackoverflow.com/questions/5455794/removing-whitespace-from-strings-in-java?rq=1
+------------------------------------------------------------------------------------------------
+st.replaceAll("\\s+","") and st.replaceAll("\\s","") produce the same result.
+
+The second regex is 20% faster than the first one, but as the number consecutive spaces increases, the first one performs better than the second one.
+
+
+replaceAll("\\s","")
+\w = Anything that is a word character
+
+\W = Anything that isn't a word character (including punctuation etc)
+
+\s = Anything that is a space character (including space, tab characters etc)
+
+\S = Anything that isn't a space character (including both letters and numbers, as well as punctuation etc)
+
+(Edit: As pointed out, you need to escape the backslash if you want \s to reach the regex engine, resulting in \\s.)  
