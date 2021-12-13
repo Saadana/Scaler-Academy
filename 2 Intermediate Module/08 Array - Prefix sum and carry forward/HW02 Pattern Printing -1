@@ -1,0 +1,13 @@
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(int A) {
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>> ();
+        for(int i = 0; i < A; ++i) {
+            ArrayList<Integer> r = new ArrayList<Integer> ();
+            for(int j = 0; j < A; ++j) {
+                r.add((j <= i) ? (j+1) : 0);
+            }
+            res.add(r);
+        }
+        return res;
+    }
+}
