@@ -1,0 +1,24 @@
+public int climbStaircase(int N) {
+    //step N can be reached from steps (N-1) or (N-2)
+    //ways(N) = ways(N-1) + ways(N-2) - this is similar to fib(n) = fib(n-1) + fib(n-2)
+    //fibonacci(N+1) gives ways(N), since ways(0) = 1
+    int n = N + 1;
+    if(n <= 1) {
+        return n;
+    }
+    int a = 0, b = 1, c;
+    while(n-- > 1) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+
+
+If we can climb any number of steps from X = {1, 3, 5}, then it means that the Nth step can be reached from steps (N-1) or (N-3) or (N-5).
+ie.,  ways(N) = ways(N-1) + ways(N-3) + ways(N-5)
+
+
+https://www.youtube.com/watch?v=qSE2iKRU4UA
