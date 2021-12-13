@@ -1,0 +1,15 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int maxSubArray(final List<Integer> A) {
+        int n = A.size();
+        int maxEndingHere = 0;
+        int maxSoFar = Integer.MIN_VALUE;
+        for(int i = 0; i < n; ++i) {
+            int val = A.get(i);
+            maxEndingHere += val;
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+            maxEndingHere = Math.max(0, maxEndingHere);
+        }
+        return maxSoFar;
+    }
+}
