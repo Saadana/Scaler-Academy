@@ -1,0 +1,41 @@
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
+        int nA = A.size();
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>> ();
+        for(int b : B) {
+            ArrayList<Integer> r = new ArrayList<Integer> ();
+            for(int a = 0; a < nA; ++a) {
+                r.add(A.get((a + b) % nA));
+            }
+            res.add(r);
+        }
+        return res;
+    }
+}
+
+
+########################################################################################
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
+        int nA = A.size();
+        int nB = B.size();
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>> ();
+        for(int b = 0; b < nB; ++b) {
+            ArrayList<Integer> a = new ArrayList<Integer> (A);
+            int rotate = B.get(b) % nA;
+            reverse(a, 0, nA-1);
+            reverse(a, 0, nA-rotate-1);
+            reverse(a, nA-rotate, nA-1);
+            res.add(a);
+        }
+        return res;
+    }
+    static void reverse(ArrayList<Integer> A, int l, int r) {
+        for( ; l < r; ++l, --r) {
+            int t = A.get(l);
+            A.set(l, A.get(r));
+            A.set(r, t);
+        }
+    }
+}
