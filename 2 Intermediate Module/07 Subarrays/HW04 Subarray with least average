@@ -1,0 +1,19 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A, int B) {
+        int Asize = A.size();
+        int currSum = 0;
+        for(int i = 0; i < B; ++i) {
+            currSum += A.get(i);
+        }
+        int minSum = currSum;
+        int subArray = 0;
+        for(int i = 1; i <= Asize - B; ++i) {
+            currSum = currSum - A.get(i-1) + A.get(i+B-1);
+            if(currSum < minSum) {
+                minSum = currSum;
+                subArray = i;
+            }
+        }
+        return subArray;
+    }
+}
