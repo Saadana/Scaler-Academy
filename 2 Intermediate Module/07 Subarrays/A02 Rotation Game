@@ -1,0 +1,27 @@
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] A = new int[N];
+        for(int i = 0; i < N; ++i) {
+            A[i] = sc.nextInt();
+        }
+        int B = sc.nextInt() % N;
+        reverse(A, 0, N-1);
+        reverse(A, 0, B-1);
+        reverse(A, B, N-1);
+        for(int i = 0; i < N; ++i) {
+            System.out.print(A[i] + " ");
+        }
+    }
+    static void reverse(int[] a, int l, int r) {
+        for(; l < r; ++l, --r) {
+            int t = a[l];
+            a[l] = a[r]; 
+            a[r] = t;
+        }
+    }
+}
