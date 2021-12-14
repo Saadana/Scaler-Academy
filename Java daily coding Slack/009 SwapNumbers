@@ -1,0 +1,10 @@
+n1 = n1 ^ n2;
+n2 = n1 ^ n2;
+n1 = n1 ^ n2;
+
+--------------------------------------------
+X = X+Y
+Y = X-Y
+X = X-Y
+
+Using Arithmetic operation (*, /)
